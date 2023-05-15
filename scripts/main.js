@@ -22,6 +22,11 @@ window.onload = async () => {
         await getYourApplication();
         endLoad()
     }
+    document.getElementById("showProfile").onclick = async () => {
+        startLoad()
+        await getProfileInfo();
+        endLoad()
+    }
 
     document.getElementById("create").addEventListener("click", create);
 
@@ -233,4 +238,52 @@ const fillView = async (i) => {
 
 
     document.getElementById("file-out").href = yourApplications[i]["file"]
+}
+
+const getProfileInfo = async () => {
+    if (reportProxy == null) return;
+    let balance = await reportProxy.getBalance()
+
+    let appContainer = document.getElementsByClassName("applications")[0]
+    appContainer.innerHTML = `
+        <div class="application reward">
+            <div class="subject">
+            Your Reward Bank
+            </div>
+
+            <div class="name">
+            
+            </div>
+            
+            <div class="description">
+            Below is the amount of eth donated to you by the community. <br>
+            Hit Withdraw to move that amount to your wallet.<br><br>
+            Balance: ${balance}
+            </div>
+
+            <button id="withdraw-btn">Withdraw</button>
+        </div>
+    `
+    document.getElementById("withdraw-btn").onclick = () => {
+        withdrawMoney()
+    }
+}
+
+const withdrawMoney = async () => {
+    console.log("in withdraw")
+
+    if (reportProxy == null) return;
+
+    startLoad()
+
+    try {
+        await reportProxy.withdraw()
+        await getProfileInfo()
+        console.log("Money moved to your account");
+    } catch (error) {
+        console.log("error in up withdrawal");
+        console.log(error);
+    }
+
+    endLoad()
 }

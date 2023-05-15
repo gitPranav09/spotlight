@@ -7,7 +7,7 @@ $blue:#3671e9;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition-duration: 300ms;
+    transition-duration: 200ms;
 }
 
 body {
@@ -324,4 +324,37 @@ body {
     display: flex;
     height: 60%;
     display: none;
+}
+
+#withdraw-btn {
+    outline: none;
+    stroke: none;
+    font-size: large;
+    padding: 14px 34px;
+    background: $blue;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+        transform: scale(.95);
+    }
+
+    &:active {
+        transform: scale(.9);
+    }
+
+    margin-right: 20px;
+}
+
+.reward {
+    &:hover {
+        transform: scale(1);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
 }

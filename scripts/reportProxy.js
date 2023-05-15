@@ -93,8 +93,9 @@ class ReportProxy {
             return []
         }
         const tx = await this.contract.functions.getBalance()
-        const receipt = await tx.wait();
-        console.log(receipt);
+        // const receipt = await tx.wait();
+        // console.log(receipt);
+        return tx[0]
     }
 
     async withdraw() {
