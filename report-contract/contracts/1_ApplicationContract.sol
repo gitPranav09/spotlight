@@ -71,7 +71,7 @@ contract ApplicationContract {
     function withdraw() payable public {
         address payable user = payable(msg.sender);
         user.transfer( rewardBank[msg.sender] );
-        rewardBank[msg.sender] = 0
+        rewardBank[msg.sender] = 0;
     }
 
     // test function to see your own ID
