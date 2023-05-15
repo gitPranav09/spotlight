@@ -29,7 +29,7 @@ contract ApplicationContract {
         a.applierAddress = msg.sender;
         a.file = file;
         a.votes = 0;
-        
+
         applications[id] = a;
         applicationsMadeByAddress[msg.sender].push(id);
 
@@ -53,8 +53,8 @@ contract ApplicationContract {
 
     // reward system
     function addUpvote(string memory id, uint256 amount) payable public{
-        require(msg.value == amount);
-        require(amount <= address(msg.sender).balance);
+        // require(msg.value == amount);
+        // require(amount <= address(msg.sender).balance);
 
 
         rewardBank[ applications[id].applierAddress ] += amount;

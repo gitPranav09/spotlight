@@ -1,4 +1,4 @@
-class reportProxy {
+class ReportProxy {
     provider = null
     contract = null
     signer = null
@@ -81,10 +81,8 @@ class reportProxy {
             console.log("Connect Your Account to Continue!")
             return []
         }
-        const options = { value: ethers.utils.parseEther("1") }
-        const tx = await this.contract.functions.addUpvote(
-            id, 1, options
-        )
+        const options = { value: ethers.utils.parseUnits("1", 'ether').toHexString() }
+        const tx = await this.contract.functions.addUpvote(id, 1, options)
         const receipt = await tx.wait();
         console.log(receipt);
     }

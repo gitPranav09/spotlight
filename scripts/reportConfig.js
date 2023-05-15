@@ -2,7 +2,7 @@
 
 // first block address
 // find it in .\report-contract\ApplicationContract.json
-const contractAddress = "0x118B5cA4215970c1a4E252a772A8b85a7e9f3350";
+const contractAddress = "0x3e57d8d1212B110c57937A29cA0fBB762628C5af";
 
 // first block abi
 // find it in .\report-contract\ApplicationContract.json

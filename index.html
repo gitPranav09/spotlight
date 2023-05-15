@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Manifest.json  -->
+    <meta property="og:title" content="Spotlight">
+    <meta property="og:description"
+        content="A community driven and Blockchain powered crime reporting system for citizen empowerment.">
+    <meta property="og:image" itemprop="image" content="./assests/logo.png">
+    <meta property="og:url" content="https://jhamadhav.com/spotlight">
+
+    <!-- Main Link Tags  -->
+    <link href="./assests/logo.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="./assests/logo.png" rel="icon" type="image/png" sizes="32x32">
+
+    <title>spotlight | Dashboard</title>
+    <!-- ethers.js -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript" async></script>
+
+    <!-- custom scripts -->
+    <script src="./scripts/loader.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid-random@1.3.2/index.min.js" defer></script>
+    <script src="./scripts/reportConfig.js" defer></script>
+    <script src="./scripts/reportProxy.js" defer></script>
+    <script src="./scripts/main.js" defer type="module"></script>
+    <link rel="stylesheet" href="./styles/main.min.css">
+</head>
+
+<body>
+    <!-- loader start -->
+    <div class="loader-wrapper">
+        <div>
+            <div class="bg"></div>
+            <div class="container">
+                <div class="holder">
+                    <div class="box"></div>
+                </div>
+                <div class="holder">
+                    <div class="box"></div>
+                </div>
+                <div class="holder">
+                    <div class="box"></div>
+                </div>
+            </div>
+        </div>
+        <p>loading...</p>
+    </div>
+    <!-- loader end -->
+
+    <!-- nav -->
+    <div class="nav">
+        <div class="left">
+            <img src="./assests/logo.png" alt="main logo">
+            <div>Spotlight</div>
+        </div>
+        <div class="right">
+            <img src="./assests/plus.svg" alt="plus sign">
+            <div id="create-app-nav">Create application</div>
+        </div>
+    </div>
+    <!-- nav end -->
+
+    <div class="tabs">
+        <div class="block" id="showAll">
+            All Reports
+        </div>
+        <div class="block" id="showYour">
+            Reports by you
+        </div>
+    </div>
+
+    <!-- where all application will appear -->
+    <div class="applications">
+
+        <div class="application">
+            <div class="subject shadow"></div>
+            <div class="name shadow"></div>
+            <div class="description shadow">
+            </div>
+        </div>
+        <div class="application">
+            <div class="subject shadow"></div>
+            <div class="name shadow"></div>
+            <div class="description shadow">
+            </div>
+        </div>
+        <div class="application">
+            <div class="subject shadow"></div>
+            <div class="name shadow"></div>
+            <div class="description shadow">
+            </div>
+        </div>
+        <div class="application">
+            <div class="subject shadow"></div>
+            <div class="name shadow"></div>
+            <div class="description shadow">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- where you will write  -->
+    <div class="app-write">
+        <h1>Create new application</h1>
+
+        <label>subject:</label>
+        <input type="text" id="subject-input" autocomplete="on" placeholder="Subject of application"><br>
+
+        <label>description</label>
+        <div type="text" id="description-input" autocomplete="on" placeholder="Description" contentEditable="true">
+            Description
+        </div>
+        <br>
+
+        <label>Upload application file</label>
+        <input type="file" name="fileList" id="filepicker">
+
+        <div class="btn-holder">
+            <button id="create">create</button>
+            <button id="close">close</button>
+        </div>
+    </div>
+
+    <!-- app view -->
+    <div class="app-view">
+        <h1>View application</h1>
+
+        <label>subject:</label>
+        <div id="subject-out">Application subject</div>
+
+        <label>Votes:</label>
+        <div id="name-out">Application votes</div>
+
+        <label>description</label>
+        <div id="description-out">Application description</div>
+        <br>
+
+
+        <label>Upload application file</label>
+        <a href="#" id="file-out">Attached file</a>
+
+        <div class="btn-holder">
+            <button id="up-vote">up vote</button>
+            <button id="view-close">close</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
