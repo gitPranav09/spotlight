@@ -198,6 +198,11 @@ const buildCards = (data) => {
     let appContainer = document.getElementsByClassName("applications")[0]
     let txt = ""
     for (let i = 0; i < data.length; ++i) {
+        let desc = data[i]["description"]
+        let textLimit = 200
+        if (desc.length > textLimit) {
+            desc = desc.substring(0, textLimit) + "..."
+        }
         txt += `
         <div class="application">
             <div class="subject">
@@ -209,7 +214,7 @@ const buildCards = (data) => {
             </div>
             
             <div class="description">
-            ${data[i]["description"]}
+            ${desc}
             </div>
         </div>
         `

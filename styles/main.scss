@@ -120,13 +120,13 @@ body {
     max-width: 360px;
     background: #fff;
     padding: 34px;
-    min-height: 380px;
+    height: 360px;
     border-radius: 16px;
     cursor: pointer;
     transition-duration: 100ms;
 
     &:active {
-        transform: scale(.9);
+        transform: scale(.97);
     }
 
     .subject {
